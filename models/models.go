@@ -1,5 +1,7 @@
 package models
 
+import "gocv.io/x/gocv"
+
 type Shape string
 
 const (
@@ -29,4 +31,11 @@ type Card struct {
 	Color   Color
 	Filling Filling
 	Count   int
+}
+
+type CardContour struct {
+	Perimeter  float64
+	Area       float64
+	ApproxPoly gocv.PointVector
+	Contour    gocv.PointVector
 }
